@@ -1,0 +1,1 @@
+1. La sécurité est mauvaise car les données ne sont pas chiffrées : sur le serveur, on peut voir les informations des utilisateurs (clients) et le contenu de leurs messages en clair.
