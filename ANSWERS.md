@@ -1,1 +1,3 @@
 1. La sécurité est mauvaise car les données ne sont pas chiffrées : sur le serveur, on peut voir les informations des utilisateurs (clients) et le contenu de leurs messages en clair.
+
+2.La sérialisation pickle est un mauvais choix car les données ne sont pas chiffrées et il n'y a pas de moyen de vérifier si les données ont été altérées. Lors de la désérialisation, le pickle peut éxécuter un script python, qui pourrait être malvaillant.
