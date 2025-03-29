@@ -5,3 +5,14 @@
 3. Les principales alternatives à l'utilisation de pickle sont le JSON ou MessagePack.
 
 4. Le chiffrement seul est insuffisant car il garanti la confidentialité, mais pas l'intégrité.
+
+5. 2 solutions pour générer des salts sont :
+#1
+import secrets
+salt = secrets.token_bytes(SALT_LENGTH) 
+
+#2
+import os
+salt = os.urandom(SALT_LENGHT)
+
+6. Il faut transmettre le salt en clair car on compte sur la confidentialité de la clé. De plus, il est nécessaire pour regénérer la clé côté destinataire.
