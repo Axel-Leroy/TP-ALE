@@ -3,10 +3,10 @@ import zmq
 from threading import Thread
 
 class BigBrother:
-    def __init__(self, host="localhost", ports=(6666, 6667)):
+    def __init__(self, host="localhost", port=6667):
         self.context = zmq.Context()
         self.sub = self.context.socket(zmq.SUB)
-        self.sub.connect(f"tcp://{host}:{ports[1]}")
+        self.sub.connect(f"tcp://{host}:{port}")
         self.sub.setsockopt_string(zmq.SUBSCRIBE, "")
         self.running = True
 
@@ -32,3 +32,4 @@ class BigBrother:
 
 if __name__ == "__main__":
     BigBrother().run()
+    
