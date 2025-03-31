@@ -18,3 +18,5 @@ salt = os.urandom(SALT_LENGHT)
 6. Il faut transmettre le salt en clair car on compte sur la confidentialité de la clé. De plus, il est nécessaire pour regénérer la clé côté destinataire.
 
 7. On observe que la structure des messages a changé sur les logs du serveur (ajout du salt). On constate également que le message est illisible.
+
+8. Un serveur malveillant pourrait modifier les données envoyées pour les rendre illisibles aux clients, en modifiant le salt par exemple.
