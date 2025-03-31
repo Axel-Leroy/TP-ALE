@@ -19,4 +19,6 @@ salt = os.urandom(SALT_LENGHT)
 
 7. On observe que la structure des messages a changé sur les logs du serveur (ajout du salt). On constate également que le message est illisible.
 
-8. Un serveur malveillant pourrait modifier les données envoyées pour les rendre illisibles aux clients, en modifiant le salt par exemple.
+8. Un serveur malveillant pourrait modifier les données envoyées.
+
+9. Dans le cas de données modifiées, il faudrait ajouter une signature afin de vérifier l'authenticité du message.

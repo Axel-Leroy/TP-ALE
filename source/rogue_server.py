@@ -15,8 +15,9 @@ class RogueServer(AEServer):
 
         try:
             if "message" in frame:
-                #on modifie le salt
-                frame["message"]["salt"]="plus de salt"
+                logging.info(f"Message avant modification : {frame["message"]}")
+                #on modifie le message
+                frame["message"]["encrypted_message"]+=b"[modified by server]".hex()
                 logging.info(f"Message après modification : {frame["message"]}")
                 modified_packet = self._serial_function(frame)
                 #on renvoie le nouveau packet qui a la frame modifiée
