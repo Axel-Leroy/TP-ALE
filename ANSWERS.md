@@ -21,4 +21,6 @@ salt = os.urandom(SALT_LENGHT)
 
 8. Un serveur malveillant pourrait modifier les données envoyées.
 
-9. Dans le cas de données modifiées, il faudrait ajouter une signature afin de vérifier l'authenticité du message.
+9. Dans le cas de données modifiées, il faudrait ajouter une signature afin de vérifier l'authenticité du message. Fernet n'est pas adapté car le serveur peut recréer un HMAC valide après modification et donc modifier un message et le rechiffre sans être détecté.
+
+10. En pratique, en gardant Fernet, on peut mettre le nick dans le HMAC et vérifier qu'il est bien identique à la réception.
